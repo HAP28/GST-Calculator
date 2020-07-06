@@ -3,6 +3,7 @@ package com.example.gstcalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +16,8 @@ import static android.graphics.Color.rgb;
 public class HomeActivity extends AppCompatActivity {
 
     private float gst = 5;
-    private Float netAmt,gstAmount;
+    private Float netAmt, gstAmount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +41,10 @@ public class HomeActivity extends AppCompatActivity {
                 btn12.setBackground(getDrawable(R.drawable.button));
                 btn18.setBackground(getDrawable(R.drawable.button));
                 btn28.setBackground(getDrawable(R.drawable.button));
-                btn5.setTextColor(rgb(210,243,247));
-                btn12.setTextColor(rgb(61,8,234));
-                btn18.setTextColor(rgb(61,8,234));
-                btn28.setTextColor(rgb(61,8,234));
+                btn5.setTextColor(rgb(210, 243, 247));
+                btn12.setTextColor(rgb(61, 8, 234));
+                btn18.setTextColor(rgb(61, 8, 234));
+                btn28.setTextColor(rgb(61, 8, 234));
             }
         });
         btn12.setOnClickListener(new View.OnClickListener() {
@@ -53,10 +55,10 @@ public class HomeActivity extends AppCompatActivity {
                 btn12.setBackground(getDrawable(R.drawable.buttonactive));
                 btn18.setBackground(getDrawable(R.drawable.button));
                 btn28.setBackground(getDrawable(R.drawable.button));
-                btn12.setTextColor(rgb(210,243,247));
-                btn5.setTextColor(rgb(61,8,234));
-                btn18.setTextColor(rgb(61,8,234));
-                btn28.setTextColor(rgb(61,8,234));
+                btn12.setTextColor(rgb(210, 243, 247));
+                btn5.setTextColor(rgb(61, 8, 234));
+                btn18.setTextColor(rgb(61, 8, 234));
+                btn28.setTextColor(rgb(61, 8, 234));
             }
         });
         btn18.setOnClickListener(new View.OnClickListener() {
@@ -67,10 +69,10 @@ public class HomeActivity extends AppCompatActivity {
                 btn12.setBackground(getDrawable(R.drawable.button));
                 btn18.setBackground(getDrawable(R.drawable.buttonactive));
                 btn28.setBackground(getDrawable(R.drawable.button));
-                btn18.setTextColor(rgb(210,243,247));
-                btn12.setTextColor(rgb(61,8,234));
-                btn5.setTextColor(rgb(61,8,234));
-                btn28.setTextColor(rgb(61,8,234));
+                btn18.setTextColor(rgb(210, 243, 247));
+                btn12.setTextColor(rgb(61, 8, 234));
+                btn5.setTextColor(rgb(61, 8, 234));
+                btn28.setTextColor(rgb(61, 8, 234));
             }
         });
         btn28.setOnClickListener(new View.OnClickListener() {
@@ -81,34 +83,47 @@ public class HomeActivity extends AppCompatActivity {
                 btn12.setBackground(getDrawable(R.drawable.button));
                 btn18.setBackground(getDrawable(R.drawable.button));
                 btn28.setBackground(getDrawable(R.drawable.buttonactive));
-                btn28.setTextColor(rgb(210,243,247));
-                btn12.setTextColor(rgb(61,8,234));
-                btn18.setTextColor(rgb(61,8,234));
-                btn5.setTextColor(rgb(61,8,234));
+                btn28.setTextColor(rgb(210, 243, 247));
+                btn12.setTextColor(rgb(61, 8, 234));
+                btn18.setTextColor(rgb(61, 8, 234));
+                btn5.setTextColor(rgb(61, 8, 234));
             }
         });
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                netAmt = (Float.parseFloat(initAmt.getText().toString()) + Float.parseFloat(initAmt.getText().toString()) * (gst / 100));
-                gstAmount = (Float.parseFloat(initAmt.getText().toString()) * (gst / 100));
+                initAmt.getText().toString();
+                if (TextUtils.isEmpty(initAmt.getText().toString())) {
+                    netAmt = 0f;
+                    gstAmount = 0f;
+                    initAmt.setError("Please enter valid amount");
+                } else {
+                    netAmt = (Float.parseFloat(initAmt.getText().toString()) + Float.parseFloat(initAmt.getText().toString()) * (gst / 100));
+                    gstAmount = (Float.parseFloat(initAmt.getText().toString()) * (gst / 100));
+                }
                 netAmount.setText("₹" + new DecimalFormat("##.##").format(netAmt));
                 gstAmt.setText("₹" + new DecimalFormat("##.##").format(gstAmount));
-                sgstCgst.setText("₹" + new DecimalFormat("##.##").format((gstAmount/2)));
-                gstAmt.setTextColor(rgb(0,0,0));
-                sgstCgst.setTextColor(rgb(0,0,0));
+                sgstCgst.setText("₹" + new DecimalFormat("##.##").format((gstAmount / 2)));
+                gstAmt.setTextColor(rgb(0, 0, 0));
+                sgstCgst.setTextColor(rgb(0, 0, 0));
             }
         });
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                netAmt = (Float.parseFloat(initAmt.getText().toString()) - Float.parseFloat(initAmt.getText().toString())* (gst / 100));
-                gstAmount = (Float.parseFloat(initAmt.getText().toString()) * (gst / 100));
+                if (TextUtils.isEmpty(initAmt.getText().toString())) {
+                    netAmt = 0f;
+                    gstAmount = 0f;
+                    initAmt.setError("Please enter valid amount");
+                } else {
+                    netAmt = (Float.parseFloat(initAmt.getText().toString()) - Float.parseFloat(initAmt.getText().toString()) * (gst / 100));
+                    gstAmount = (Float.parseFloat(initAmt.getText().toString()) * (gst / 100));
+                }
                 netAmount.setText("₹" + new DecimalFormat("##.##").format(netAmt));
                 gstAmt.setText("₹" + new DecimalFormat("##.##").format(gstAmount));
-                sgstCgst.setText("₹" + new DecimalFormat("##.##").format((gstAmount/2)));
-                gstAmt.setTextColor(rgb(0,0,0));
-                sgstCgst.setTextColor(rgb(0,0,0));
+                sgstCgst.setText("₹" + new DecimalFormat("##.##").format((gstAmount / 2)));
+                gstAmt.setTextColor(rgb(0, 0, 0));
+                sgstCgst.setTextColor(rgb(0, 0, 0));
             }
         });
     }
