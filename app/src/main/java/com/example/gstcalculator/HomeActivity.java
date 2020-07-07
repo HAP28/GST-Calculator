@@ -27,11 +27,11 @@ public class HomeActivity extends AppCompatActivity {
         final Button btn18 = findViewById(R.id.button18);
         final Button btn28 = findViewById(R.id.button28);
         Button add = findViewById(R.id.add);
-        Button sub = findViewById(R.id.sub);
-        final TextView netAmount = findViewById(R.id.net_amount);
-        final EditText initAmt = findViewById(R.id.initial_amount);
-        final EditText gstAmt = findViewById(R.id.gst_amount);
-        final EditText sgstCgst = findViewById(R.id.sgst_cgst);
+        Button sub = findViewById(R.id.btn_sub);
+        final TextView netAmount = findViewById(R.id.tv_net_amount);
+        final EditText initAmt = findViewById(R.id.et_initial_amount);
+        final EditText gstAmt = findViewById(R.id.et_gst_amount);
+        final EditText sgstCgst = findViewById(R.id.et_sgst_amount);
 
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override

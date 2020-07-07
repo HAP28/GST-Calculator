@@ -7,13 +7,13 @@
     tools:context=".HomeActivity"
     android:background="@color/colorAccent">
 
-
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/layout_top"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,23 +23,20 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tv_gst_cal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="GST CALCULATOR"
                 android:textColor="@color/colorAccent"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/net_amount"
+                android:id="@+id/tv_net_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
@@ -47,103 +44,81 @@
                 android:textColor="@color/colorAmount"
                 android:textSize="56sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_gst_cal" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/layout_percent"
         android:layout_width="0dp"
         android:layout_height="90dp"
         android:orientation="horizontal"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        app:layout_constraintTop_toBottomOf="@+id/layout_top">
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
+                android:layout_weight="1"
                 android:background="@drawable/buttonactive"
                 android:text="5%"
                 android:textColor="@color/colorAccent"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="18sp"/>
 
             <Button
                 android:id="@+id/button12"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginStart="25dp"
                 android:background="@drawable/button"
                 android:text="12%"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/button5"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/button18"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginStart="25dp"
                 android:background="@drawable/button"
                 android:text="18%"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/button12"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/button28"
-                android:layout_width="70dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginStart="25dp"
                 android:background="@drawable/button"
                 android:text="28%"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/button18"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/layout_initial_amount"
         android:layout_width="0dp"
         android:layout_height="90dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/layout_percent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tv_initial_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -153,15 +128,11 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/initial_amount"
+                android:id="@+id/et_initial_amount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -172,45 +143,36 @@
                 android:hint="₹ 0"
                 android:inputType="number"
                 android:padding="8dp"
-                android:paddingLeft="10dp"
                 android:textColorHint="@color/colorBlack"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_initial_amount" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
+        android:id="@+id/layout_gst"
         android:layout_width="0dp"
         android:layout_height="90dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        app:layout_constraintTop_toBottomOf="@+id/layout_initial_amount">
 
             <LinearLayout
-                android:id="@+id/linearLayout4"
-                android:layout_width="203dp"
-                android:layout_height="90dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:id="@+id/layout_gst_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/tv_gst_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="25dp"
@@ -219,15 +181,11 @@
                         android:textColor="@color/colorPrimary"
                         android:textSize="20dp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <EditText
-                        android:id="@+id/gst_amount"
+                        android:id="@+id/et_gst_amount"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -244,25 +202,22 @@
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_gst_amount" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="206dp"
-                android:layout_height="90dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/linearLayout4"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/tv_sgst_amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="25dp"
@@ -271,15 +226,11 @@
                         android:textColor="@color/colorPrimary"
                         android:textSize="20dp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                     <EditText
-                        android:id="@+id/sgst_cgst"
+                        android:id="@+id/et_sgst_amount"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -296,20 +247,18 @@
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_sgst_amount" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout7"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/layout_gst">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -318,59 +267,56 @@
 
             <Button
                 android:id="@+id/add"
-                android:layout_width="180dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/add_btn"
                 android:text="ADD GST"
                 android:textColor="@color/colorAccent"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toStartOf="@id/btn_sub"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/sub"
-                android:layout_width="180dp"
+                android:id="@+id/btn_sub"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/sub_btn"
                 android:text="REMOVE GST"
                 android:textColor="@color/colorAccent"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/add"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/iv_gst_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_created_by"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-        app:srcCompat="@drawable/logo_gst" />
+        android:background="@drawable/logo_gst" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_created_by"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Designed &amp; Developed by Harshit Parikh"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         android:textSize="12sp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
